@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import py7zr
 
-def download_and_extract(url, datadir, remote_fname, file_name, delete_download=False):
+def download_and_extract(url, datadir, remote_fname, file_name, delete_download=False): # TODO: typehinting
     """Helper function to download and unzip files."""
     download_path = os.path.join(datadir, remote_fname)
     response = requests.get(url)
@@ -17,7 +17,7 @@ def download_and_extract(url, datadir, remote_fname, file_name, delete_download=
         os.remove(download_path)
 
 
-def initialize_and_download(datadir, year, download=False):
+def initialize_and_download(datadir, year, download=False): # TODO: typehinting
     """Download the dataset (if required)."""
     assert int(year) >= 2016
 
@@ -49,23 +49,27 @@ def initialize_and_download(datadir, year, download=False):
     except Exception as e:
         print(f'\n{os.path.join(datadir, remote_fname)} may be corrupted. Please try deleting it and rerunning this command.\n')
         print(f'Exception: ', e)
-
+        # TODO: rewrite print as logging
     return file_path
 
 
-def load_zno(root_dir, year=2016, download=False):
+def load_zno(root_dir, year=2016, download=False): # TODO: typehinting
     """
     Load sample of ZNO data from Testportal into DataFrame.
     """
     if int(year) < 2016:
         raise ValueError('Year must be >= 2016')
+    # TODO: raise error when year>current_year
     
     base_datadir = os.path.join(root_dir, str(year))
     os.makedirs(base_datadir, exist_ok=True)
     
     file_name = initialize_and_download(base_datadir, year, download=download)
-                    
-    return pd.read_csv(file_name, sep=";")
+
+    try:           
+        return pd.read_csv(file_name, sep=";", encoding='utf-8')
+    except:
+        return pd.read_csv(file_name, sep=";", encoding='Windows 1251')
 
 if __name__ == "__main__":
-    print(load_zno('ZNO', year=2018, download=True))
+    print(load_zno('ZNO', year=2020, download=True))
