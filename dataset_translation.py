@@ -87,3 +87,7 @@ def translate_dataset():
     zno_translated = translate_with_google(zno_orig)
     zno_translated = translate_manually(zno_translated)
     zno_translated.to_csv("translated.csv", index=False)
+
+
+if __name__ == "__main__":
+    translate_dataset()
