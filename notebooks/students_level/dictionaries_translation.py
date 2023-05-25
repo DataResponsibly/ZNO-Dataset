@@ -68,6 +68,7 @@ region_dict = {
     'Тернопільська область': 'Ternopil Oblast',
     'Луганська область': 'Luhansk Oblast',
     'Чернігівська область': 'Chernihiv Oblast',
+    'Інші країни': 'Other countries'
 }
 
 grad_type_dict = {
