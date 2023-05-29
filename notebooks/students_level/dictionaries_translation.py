@@ -18,7 +18,7 @@ class_profile_dict = {
     'Спортивний': 'Sports',
     'Математичний': 'Mathematics',
     'Правовий': 'Law',
-    'Інший(багатопрофільність)': 'Other (multi-profile)',
+    'Інший': 'Other (multi-profile)',
     'Військово-спортивний': 'Military and sports',
     'Філософський': 'Philosophy',
     'Екологічний': 'Ecology',
@@ -73,8 +73,8 @@ region_dict = {
 
 grad_type_dict = {
     'Випускник української школи поточного року': 'A graduate of an Ukrainian school of the current year',
-    'Випускник коледжу': 'College graduate',
-    'Студент закладу вищої освіти': 'A student of a higher education institution',
+    'Учень коледжу закладу професійної (професійно-технічної) або вищої освіти': 'College student of a vocational or higher education institution',
+    'Установа виконання покарань': 'Penitentiary institution',
     'Випускник минулих років': 'A graduate of a school of the previous years',
     'Випускник іноземної школи': 'A graduate of a foreign school',
 }
@@ -112,7 +112,6 @@ school_type_dict = {
 }
 
 settlment_type_dict = {
-    'село': 'Village',
     'місто': 'City',
     'селище, село': 'Village',
     'селище міського типу': 'Urban-type settlement',
@@ -130,6 +129,7 @@ tests_dict = {
     'Німецька мова': 'German language',
     'Французька мова': 'French language',
     'Іспанська мова': 'Spanish language',
+    'Російська мова': 'russian language'
 }
 
 test_status_dict = {
@@ -138,9 +138,4 @@ test_status_dict = {
     'Не з’явився': 'No attendance',
     'Анульовано': 'Test results were cancelled',
     'Не обрано 100-200': "100-200 wasn't selected",
-}
-
-dpa_level_dict = {
-    'профільний': 'Profile',
-    'стандарт(академічний)': 'Standard (academic)',
 }
