@@ -135,7 +135,7 @@ tests_dict = {
 test_status_dict = {
     'Не подолав поріг': "The score threshold wasn't reached",
     'Зараховано': 'Test passed',
-    'Не з’явився': 'No attendance',
+    "Не з'явився": "No attendance",
     'Анульовано': 'Test results were cancelled',
     'Не обрано 100-200': "100-200 wasn't selected",
 }
