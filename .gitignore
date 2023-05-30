@@ -131,3 +131,5 @@ dmypy.json
 .DS_Store
 .csv
 notebooks/students_level/eie_full_translated.csv
+notebooks/students_level/eie_translated.csv
+notebooks/students_level/Odata2022File.csv
