@@ -72,4 +72,5 @@ def load_zno(root_dir, year=2016, download=False): # TODO: typehinting
         return pd.read_csv(file_name, sep=";", encoding='Windows 1251')
 
 if __name__ == "__main__":
-    print(load_zno('ZNO', year=2020, download=True))
+    for year in range(2016, 2023):
+        print(load_zno('ZNO', year=year, download=True))
