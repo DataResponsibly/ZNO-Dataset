@@ -143,3 +143,5 @@ zno/2016/OpenData2016.csv
 notebooks/students_level/school_dataset.csv
 notebooks/students_level/zno_all.csv
 notebooks/students_level/zno_preprocessed.csv
+notebooks/students_level/eie_preprocessed.csv
+notebooks/students_level/eie_all.csv
