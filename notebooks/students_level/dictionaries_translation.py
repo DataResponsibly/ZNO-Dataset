@@ -18,7 +18,7 @@ class_profile_dict = {
     'Спортивний': 'Sports',
     'Математичний': 'Mathematics',
     'Правовий': 'Law',
-    'Інший': 'Other (multi-profile)',
+    'Інший(багатопрофільність)': 'Other (multi-profile)',
     'Військово-спортивний': 'Military and sports',
     'Філософський': 'Philosophy',
     'Екологічний': 'Ecology',
@@ -71,10 +71,71 @@ region_dict = {
     'Інші країни': 'Other countries'
 }
 
+other_countries_cities = {
+    'м.Варшава': 'Warsaw',
+    'м.Стокгольм': 'Stockholm',
+    'м.Краків': 'Krakow',
+    'м.Брно': 'Brno',
+    'м.Кельн': 'Cologne',
+    'м.Лондон': 'London',
+    'м.Гданськ': 'Gdansk',
+    'м.Дублін': 'Dublin',
+    'м.Париж': 'Paris',
+    'м.Лісабон': 'Lisbon',
+    'м.Лейпциг': 'Leipzig',
+    'м.Рим': 'Rome',
+    'м.Брюссель': 'Brussels',
+    'м.Бидгощ': 'Bydgoszcz',
+    'м.Кишинів': 'Chisinau',
+    'м.Бухарест': 'Bucharest',
+    'м.Мюнхен': 'Munich',
+    'м.Дебрецен': 'Debrecen',
+    'м.Будапешт': 'Budapest',
+    'м.Копенгаген': 'Copenhagen',
+    'м.Роттердам': 'Rotterdam',
+    'м.Берн': 'Bern',
+    'м.Загреб': 'Zagreb',
+    'м.Гамбург': 'Hamburg',
+    'м.Братислава': 'Bratislava',
+    'м.Прага': 'Prague',
+    'м.Мадрид': 'Madrid',
+    'м.Мілан': 'Milan',
+    'м.Відень': 'Vienna',
+    'м.Каунас': 'Kaunas',
+    'м.Познань': 'Poznan',
+    'м.Франкфурт-на-Майні': 'Frankfurt am Main',
+    'м.Вроцлав': 'Wroclaw',
+    'м.Варна': 'Varna',
+    'м.Гельсінкі': 'Helsinki',
+    'м.Рига': 'Riga',
+    'м.Клуж-Напока': 'Cluj-Napoca',
+    'м.Люблін': 'Lublin',
+    'м.Дьєр': 'Gyor',
+    'м.Анкара': 'Ankara',
+    'м.Таллінн': 'Tallinn',
+    'м.Афіни': 'Athens',
+    'м.Берлін': 'Berlin',
+    'м.Марсель': 'Marseille',
+    'м.Нью-Йорк': 'New York',
+    'м.Бордо': 'Bordeaux',
+    'м.Тарту': 'Tartu',
+    'м.Тбілісі': 'Tbilisi',
+    'м.Барі': 'Bari',
+    'м.Гетеборг': 'Gothenburg',
+    'м.Софія': 'Sofia',
+    'м.Банська Бистриця': 'Banska Bystrica',
+    'м.Торонто': 'Toronto',
+    'м.Гронінген': 'Groningen',
+    'м.Люксембург': 'Luxembourg',
+    'м.Марібор': 'Maribor',
+    'м.Сакраменто': 'Sacramento',
+    'м.Едмонтон': 'Edmonton'
+}
+
 grad_type_dict = {
     'Випускник української школи поточного року': 'A graduate of an Ukrainian school of the current year',
-    'Учень коледжу закладу професійної (професійно-технічної) або вищої освіти': 'College student of a vocational or higher education institution',
-    'Установа виконання покарань': 'Penitentiary institution',
+    'Випускник коледжу': 'College graduate',
+    'Студент закладу вищої освіти': 'A student of a higher education institution',
     'Випускник минулих років': 'A graduate of a school of the previous years',
     'Випускник іноземної школи': 'A graduate of a foreign school',
 }
@@ -112,6 +173,7 @@ school_type_dict = {
 }
 
 settlment_type_dict = {
+    'село': 'Village',
     'місто': 'City',
     'селище, село': 'Village',
     'селище міського типу': 'Urban-type settlement',
@@ -129,13 +191,17 @@ tests_dict = {
     'Німецька мова': 'German language',
     'Французька мова': 'French language',
     'Іспанська мова': 'Spanish language',
-    'Російська мова': 'russian language'
 }
 
 test_status_dict = {
     'Не подолав поріг': "The score threshold wasn't reached",
     'Зараховано': 'Test passed',
-    "Не з'явився": "No attendance",
+    'Не з’явився': 'No attendance',
     'Анульовано': 'Test results were cancelled',
     'Не обрано 100-200': "100-200 wasn't selected",
+}
+
+dpa_level_dict = {
+    'профільний': 'Profile',
+    'стандарт(академічний)': 'Standard (academic)',
 }
