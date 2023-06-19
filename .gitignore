@@ -145,3 +145,6 @@ notebooks/students_level/zno_all.csv
 notebooks/students_level/zno_preprocessed.csv
 notebooks/students_level/eie_preprocessed.csv
 notebooks/students_level/eie_all.csv
+notebooks/students_level/eie_preprocessed.csv.zip
+notebooks/students_level/areas.csv
+notebooks/students_level/location.csv
