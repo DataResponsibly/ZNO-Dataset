@@ -148,3 +148,6 @@ notebooks/students_level/eie_all.csv
 notebooks/students_level/eie_preprocessed.csv.zip
 notebooks/students_level/areas.csv
 notebooks/students_level/location.csv
+notebooks/students_level/eie_2016_2021_preprocessed.csv
+notebooks/students_level/eie_2016-2021_preprocessed.csv
+notebooks/students_level/eie_2016-2022_preprocessed.csv
