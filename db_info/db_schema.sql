@@ -1,3 +1,7 @@
+CREATE DATABASE ZNO;
+
+USE ZNO;
+
 create table Locations (
     location_codifier integer primary key
 );
@@ -36,7 +40,7 @@ create table Students (
 );
 
 create table Tests (
-    test_type varchar(256),
+    test_type varchar(100),
     test_subject varchar(256),
     primary key(test_type, test_subject)
 );
@@ -49,7 +53,7 @@ create table Test_Centers (
 
 create table Students_Take_Tests (
     test_center_name varchar(256),
-    test_type varchar(256),
+    test_type varchar(100),
     test_subject varchar(256),
     student_id integer,
     year year,
