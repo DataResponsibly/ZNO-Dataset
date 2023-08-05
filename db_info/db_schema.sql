@@ -4,6 +4,7 @@ USE ZNO;
 
 create table Locations (
     location_codifier integer primary key
+    -- TODO: add columns
 );
 
 create table Organizations (
