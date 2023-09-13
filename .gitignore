@@ -167,3 +167,5 @@ notebooks/students_level/eie_locations.csv
 notebooks/tables_creation/data/
 
 notebooks/tables_creation/unmatched_schools.csv
+zno/2023/Odata2023File.csv
+.gitignore
