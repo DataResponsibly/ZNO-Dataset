@@ -168,4 +168,20 @@ notebooks/tables_creation/data/
 
 notebooks/tables_creation/unmatched_schools.csv
 zno/2023/Odata2023File.csv
-.gitignore
+notebooks/tables_creation/schools_bot.csv
+notebooks/tables_creation/school_data/other datasets/05_vinnytska_ver2019.xls
+notebooks/tables_creation/school_data/other datasets/05_vinnytska_ver2020.xls
+notebooks/tables_creation/school_data/other datasets/07_volinska.xlsx
+notebooks/tables_creation/school_data/other datasets/12_dnipropetrovska.xlsx
+notebooks/tables_creation/school_data/other datasets/18_zhytomyrska_ver_2019.xls
+notebooks/tables_creation/school_data/other datasets/18_zhytomyrska_ver_2020.xls
+notebooks/tables_creation/school_data/other datasets/23_zaporizka_ver2019.xls
+notebooks/tables_creation/school_data/other datasets/23_zaporizka_ver2020.xls
+notebooks/tables_creation/school_data/other datasets/35_kirovohradska_ver2020.xlsx
+notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver.xlsx
+notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver2019.xls
+notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver2020.xls
+notebooks/tables_creation/school_data/other datasets/reestr-perelik1.xls
+notebooks/tables_creation/school_data/other datasets/perelik-subektiv-gospodaryuvannya.xlsx
+notebooks/tables_creation/school_data/other datasets/74_chernigivska_ver.xlsx
+notebooks/tables_creation/school_data/other datasets/48_mikolaivska_ver.xlsx
