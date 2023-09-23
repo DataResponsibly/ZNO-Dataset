@@ -128,14 +128,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-zno/2016/OpenData2016.csv
-zno/2017/OpenData2017.csv
-zno/2018/OpenData2018.csv
-zno/2019/Odata2019File.csv
-zno/2020/Odata2020File.csv
-zno/2021/Odata2021File.csv
-zno/2022/Odata2022File.csv
-notebooks/students_level/eie_full_translated.csv
+data_loader/2016/OpenData2016.csv
+data_loader/2017/OpenData2017.csv
+data_loader/2018/OpenData2018.csv
+data_loader/2019/Odata2019File.csv
+data_loader/2020/Odata2020File.csv
+data_loader/2021/Odata2021File.csv
+data_loader/2022/Odata2022File.csv
+notebooks/temp_old/students_level/eie_full_translated.csv
 notebooks/.DS_Store
 notebooks/school_level/.DS_Store
 
@@ -185,3 +185,4 @@ notebooks/tables_creation/school_data/other datasets/reestr-perelik1.xls
 notebooks/tables_creation/school_data/other datasets/perelik-subektiv-gospodaryuvannya.xlsx
 notebooks/tables_creation/school_data/other datasets/74_chernigivska_ver.xlsx
 notebooks/tables_creation/school_data/other datasets/48_mikolaivska_ver.xlsx
+notebooks/tables_creation/data/
