@@ -11,7 +11,14 @@ def download_and_extract(url, datadir, remote_fname, file_name, delete_download=
         handle.write(response.content)
 
     with py7zr.SevenZipFile(download_path, 'r') as archive:
-        archive.extract(targets=file_name, path=datadir)
+        filename = [i.filename for i in archive.list() if i.filename.endswith('.csv')][0]
+        archive.extract(targets=filename, path=datadir)
+
+    # if file in some other directory, move it to datadir and delete this one
+    if os.path.join(datadir, filename) != os.path.join(datadir, file_name):
+        os.rename(os.path.join(datadir, filename), os.path.join(datadir, file_name))
+        # get filename dir and delete it
+        os.rmdir(os.path.join(datadir, filename.split('/')[0]))
     
     if delete_download and download_path != os.path.join(datadir, file_name):
         os.remove(download_path)
@@ -63,7 +70,6 @@ def load_zno(root_dir, year=2016, download=False): # TODO: typehinting
     
     base_datadir = os.path.join(root_dir, str(year))
     os.makedirs(base_datadir, exist_ok=True)
-    
     file_name = initialize_and_download(base_datadir, year, download=download)
 
     try:           
@@ -72,5 +78,5 @@ def load_zno(root_dir, year=2016, download=False): # TODO: typehinting
         return pd.read_csv(file_name, sep=";", encoding='Windows 1251')
 
 if __name__ == "__main__":
-    for year in range(2016, 2023):
-        print(load_zno('ZNO', year=year, download=True))
+    for year in range(2016, 2024):
+        print(load_zno('data_loader', year=year, download=True))
