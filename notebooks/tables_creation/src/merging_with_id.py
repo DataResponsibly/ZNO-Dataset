@@ -100,7 +100,7 @@ def delete_punctuation(dataset: pd.DataFrame,  attr: str)-> pd.DataFrame:
 ступенів Куяльницької ср Подільського району Одеської області']
     '''
     punct = set(string.punctuation)
-    punct |= {"»", "«", "“", "„", "’", "–", "№"}
+    punct |= {"»", "«", "“", "„", "’", "–", "№", '_x000D_'}
 
     for sign in punct:
         dataset.loc[:,attr] = dataset[attr].str.replace(sign, '')
