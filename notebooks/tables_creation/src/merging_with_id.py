@@ -180,8 +180,11 @@ def create_id(dataset: pd.DataFrame, attr: str, id_: str)-> pd.DataFrame:
     dataset.loc[:,id_] = dataset[id_].str.replace(r'[\s\r\n\t\b]+', '', regex=True)
 
     #replace roman numerals by digits
-    dataset.loc[:,id_] = dataset[id_].str.replace('ІШ', '3').replace('ІІІІ', '3').replace('||||', '3')
-    dataset.loc[:,id_] = dataset[id_].str.replace('ІІІ', '2').replace('|||', '2')
+    dataset.loc[:,id_] = dataset[id_].str.replace('ІШ', '3')
+    dataset.loc[:,id_] = dataset[id_].str.replace('ІІІІ', '3')
+    dataset.loc[:,id_] = dataset[id_].str.replace('||||', '3')
+    dataset.loc[:,id_] = dataset[id_].str.replace('ІІІ', '2')
+    dataset.loc[:,id_] = dataset[id_].str.replace('|||', '2')
     
     dataset.loc[:,id_] = dataset[id_].str.lower()
 
@@ -208,5 +211,7 @@ def create_id(dataset: pd.DataFrame, attr: str, id_: str)-> pd.DataFrame:
 
 
 if __name__=='__main__':
-    import doctest
-    print(doctest.testmod())
+    # import doctest
+    # print(doctest.testmod())
+    dataset = pd.DataFrame({'id':['Школа І-ІІІ ступенів № 1 Шевченківського району м. Київ']})
+    print(list(create_id(dataset,'id', 'id_').id_.unique()))
