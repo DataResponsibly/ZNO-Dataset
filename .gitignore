@@ -199,3 +199,4 @@ notebooks/tables_creation/final_tables/students.csv
 notebooks/tables_creation/final_tables/students_take_tests.csv
 notebooks/tables_creation/finance_2019_for_bot.csv
 notebooks/tables_creation/dataset_2019_issues.csv
+notebooks/analysis/schools_temp.ipynb
