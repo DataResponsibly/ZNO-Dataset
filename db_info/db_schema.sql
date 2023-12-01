@@ -1,24 +1,42 @@
-CREATE DATABASE ZNO;
+DROP DATABASE IF EXISTS EIE;
 
-USE ZNO;
+CREATE DATABASE EIE;
+
+USE EIE;
 
 create table Locations (
-    location_codifier integer primary key
-    -- TODO: add columns
+    regname varchar(256),
+    areaname varchar(256),
+    tername varchar(256),
+    KOATUU_2020 BIGINT,
+    KATOTTG_2023 varchar(256),
+    category varchar(256),
+    region_name varchar(256),
+    primary key(regname, areaname, tername, KOATUU_2020)
+
 );
 
+/* 
+primary key(regname, areaname, tername, KOATUU_2020)
+todo: check primary key
+*/
+
+/*
 create table Organizations (
     organization_name varchar(256) primary key
 );
+
+*/
 
 create table Years (
     year year primary key 
 );
 
+/*
 create table Schools (
     school_name varchar(256)  primary key,
     organization_name varchar(256) not null,
-    location_codifier integer not null,
+    location_codifier BIGINT not null,
     foreign key (organization_name) references Organizations(organization_name),
     foreign key (location_codifier) references Locations(location_codifier)
 );
@@ -35,7 +53,7 @@ create table Schools_Stats (
 create table Students (
     student_id integer primary key,
     school_name varchar(256),
-    location_codifier integer not null,
+    location_codifier BIGINT not null,
     foreign key (school_name) references Schools(school_name),
     foreign key (location_codifier) references Locations(location_codifier)
 );
@@ -48,7 +66,7 @@ create table Tests (
 
 create table Test_Centers (
     test_center_name varchar(256)  primary key,
-    location_codifier integer not null,
+    location_codifier BIGINT not null,
     foreign key (location_codifier) references Locations(location_codifier)
 );
 
@@ -65,3 +83,23 @@ create table Students_Take_Tests (
     foreign key (student_id) references Students(student_id),
     foreign key (year) references Years(year)
 );
+
+*/
+
+
+/*Load data from csv
+*/
+
+LOAD DATA INFILE '../../../../final_tables/locations.csv'
+IGNORE INTO TABLE Locations
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES; 
+
+LOAD DATA INFILE '../../../../final_tables/years.csv'
+INTO TABLE Years
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES; 
