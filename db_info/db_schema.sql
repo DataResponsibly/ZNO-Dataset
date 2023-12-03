@@ -8,25 +8,14 @@ create table Locations (
     regname varchar(256),
     areaname varchar(256),
     tername varchar(256),
-    KOATUU_2020 BIGINT,
+    KOATUU_2020 varchar(256),
     KATOTTG_2023 varchar(256),
     category varchar(256),
     region_name varchar(256),
-    primary key(regname, areaname, tername, KOATUU_2020)
+    primary key(regname, areaname, tername)
 
 );
 
-/* 
-primary key(regname, areaname, tername, KOATUU_2020)
-todo: check primary key
-*/
-
-/*
-create table Organizations (
-    organization_name varchar(256) primary key
-);
-
-*/
 
 create table Years (
     year year primary key 
@@ -37,9 +26,9 @@ create table Schools (
     school_name varchar(256)  primary key,
     organization_name varchar(256) not null,
     location_codifier BIGINT not null,
-    foreign key (organization_name) references Organizations(organization_name),
     foreign key (location_codifier) references Locations(location_codifier)
 );
+
 
 create table Schools_Stats (
     id integer primary key,
