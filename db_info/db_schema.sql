@@ -27,6 +27,7 @@ create table Locations (
     KATOTTG_2023 varchar(256),
     category varchar(256),
     region_name varchar(256)
+/* add official reg, area, tername*/
 );
 
 create table Years (
@@ -34,6 +35,7 @@ create table Years (
 );
 
 /* TO DISCUSS: do we need eoname
+not add
 */
 create table Schools (
     eoname varchar(256),
@@ -65,7 +67,7 @@ create table Schools_Stats (
     foreign key (years) references Years(years)
 );
 
-
+/* filter on the creation stage*/
 create table Students (
     outid varchar(256) primary key,
     birth year,
@@ -90,6 +92,7 @@ create table Tests (
 
 /* TO DISCUSS: schools change location
 change diagram
+ptname, add connection to year diagr
 */
 create table Test_Centers (
     ptname varchar(256),
