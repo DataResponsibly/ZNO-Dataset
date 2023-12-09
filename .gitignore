@@ -202,3 +202,6 @@ notebooks/tables_creation/dataset_2019_issues.csv
 notebooks/analysis/schools_temp.ipynb
 notebooks/analyses/migration_by_gender.ipynb
 notebooks/analyses/PISA2018.png
+notebooks/tables_creation/fin_data/finance_2019_clean.csv
+notebooks/tables_creation/fin_data/finance_2020_clean.csv
+notebooks/tables_creation/fin_data/finance_2020_clean.csv
