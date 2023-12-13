@@ -958,7 +958,7 @@ dct_code_regions = {
     'UA07':'Volynska',
     'UA12':'Dnipropetrovska',
     'UA14':'Donetska',
-    'UA18':'Zhytomyrskа',
+    'UA18':'Zhytomyrska',
     'UA21':'Zakarpatska',
     'UA23':'Zaporizka',
     'UA26':'Ivano-Frankivska',
