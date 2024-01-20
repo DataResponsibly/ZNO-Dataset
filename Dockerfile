@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 ENV POSTGRES_DB=EIE
 ENV POSTGRES_USER=myuser
 ENV POSTGRES_PASSWORD=mypassword
-ENV POSTGRES_HOST_AUTH_METHOD=trust
+#ENV POSTGRES_HOST_AUTH_METHOD=trust
 
 # Copy SQL scripts and CSV files
 COPY ./db_info/db_schema.sql .
