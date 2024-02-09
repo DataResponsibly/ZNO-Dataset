@@ -23,7 +23,7 @@ CREATE TABLE Schools (
     KATOTTG_2023 varchar(32),
     EDRPOU varchar(32),
     years integer,
-    eotypename varchar(32),
+    eotypename varchar(64),
     PRIMARY KEY (EDRPOU, years),
     FOREIGN KEY (years) REFERENCES Years(years),
     FOREIGN KEY (KATOTTG_2023) REFERENCES Locations(KATOTTG_2023)
