@@ -10,7 +10,7 @@ ENV POSTGRES_PASSWORD=mypassword
 
 # Copy SQL scripts and CSV files
 COPY ./db_info/db_schema.sql .
-COPY ./notebooks/tables_creation/final_tables/locations.csv final_tables/
+COPY ./notebooks/tables_creation/final_tables/locations_base.csv final_tables/
 COPY ./notebooks/tables_creation/final_tables/years.csv final_tables/
 COPY ./notebooks/tables_creation/final_tables/schools_edrpou.csv final_tables/
 COPY ./notebooks/tables_creation/final_tables/school_stats.csv final_tables/

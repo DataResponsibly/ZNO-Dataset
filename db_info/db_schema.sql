@@ -6,11 +6,11 @@ CREATE DATABASE EIE;
 
 -- Create table Locations
 CREATE TABLE Locations (
-    KOATUU_2020 varchar(32) PRIMARY KEY,
-    KATOTTG_2023 varchar(32),
+    KATOTTG_2023 varchar(32) PRIMARY KEY,
+    KOATUU_2020 varchar(32),
     category varchar(32),
-    region_name varchar(64)
-    /* ToDo: add official area, tername*/
+    ukrainian_name varchar(64),
+    english_name varchar(64)
 );
 
 -- Create table Years
@@ -20,15 +20,14 @@ CREATE TABLE Years (
 
 -- Create table Schools
 CREATE TABLE Schools (
-    KOATUU_2020 varchar(32),
+    KATOTTG_2023 varchar(32),
     EDRPOU varchar(32),
     years integer,
+    eotypename varchar(32),
     PRIMARY KEY (EDRPOU, years),
-    FOREIGN KEY (years) REFERENCES Years(years)
+    FOREIGN KEY (years) REFERENCES Years(years),
+    FOREIGN KEY (KATOTTG_2023) REFERENCES Locations(KATOTTG_2023)
 );
--- ToDo:
--- foreign key (KOATUU_2020) references Locations(KOATUU_2020),
--- fix problem with KOATUU_2020 which we don't have in locations
 
 -- Create table Schools_Stats
 CREATE TABLE Schools_Stats (
@@ -57,11 +56,11 @@ CREATE TABLE Students (
     classprofilename varchar(128),
     regtypename varchar(128),
     classlangname varchar(128),
-    KOATUU_2020_school varchar(32),
+    KATOTTG_2023_school varchar(32),
     EDRPOU_school varchar(32),
     years integer,
     FOREIGN KEY (EDRPOU_school, years) REFERENCES Schools(EDRPOU, years),
-    FOREIGN KEY (KOATUU_2020_school) REFERENCES Locations(KOATUU_2020)
+    FOREIGN KEY (KATOTTG_2023_school) REFERENCES Locations(KATOTTG_2023)
 );
 
 -- Create table Tests
@@ -73,11 +72,11 @@ CREATE TABLE Tests (
 
 -- Create table Test_Centers
 CREATE TABLE Test_Centers (
-    KOATUU_2020 varchar(32),
+    KATOTTG_2023 varchar(32),
     years integer,
     EDRPOU varchar(32),
     PRIMARY KEY (EDRPOU, years),
-    FOREIGN KEY (KOATUU_2020) REFERENCES Locations(KOATUU_2020)
+    FOREIGN KEY (KATOTTG_2023) REFERENCES Locations(KATOTTG_2023)
 );
 
 -- Create table Test_Center_Located_In
@@ -101,18 +100,18 @@ CREATE TABLE Students_Take_Tests (
     test_status varchar(256),
     test_subject varchar(256),
     test_type varchar(100),
-    KOATUU_2020_test_center varchar(256),
+    KATOTTG_2023_test_center varchar(256),
     EDRPOU_test_center varchar(256),
     PRIMARY KEY(outid, test_type, test_subject),
     FOREIGN KEY (outid) REFERENCES Students(outid),
     FOREIGN KEY (years) REFERENCES Years(years),
     FOREIGN KEY (test_type, test_subject) REFERENCES Tests(test_type, test_subject),
-    FOREIGN KEY (KOATUU_2020_test_center) REFERENCES Locations(KOATUU_2020),
+    FOREIGN KEY (KATOTTG_2023_test_center) REFERENCES Locations(KATOTTG_2023),
     FOREIGN KEY (EDRPOU_test_center, years) REFERENCES Test_Centers(EDRPOU, years)
 );
 
 -- Load data into Locations table
-COPY Locations FROM '/usr/src/app/final_tables/locations.csv' WITH CSV HEADER;
+COPY Locations FROM '/usr/src/app/final_tables/locations_base.csv' WITH CSV HEADER;
 
 -- Load data into Years table
 COPY Years FROM '/usr/src/app/final_tables/years.csv' WITH CSV HEADER;
