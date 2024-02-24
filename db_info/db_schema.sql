@@ -59,6 +59,7 @@ CREATE TABLE Students (
     KATOTTG_2023_school varchar(32),
     EDRPOU_school varchar(32),
     years integer,
+    regstatus varchar(128),
     FOREIGN KEY (EDRPOU_school, years) REFERENCES Schools(EDRPOU, years),
     FOREIGN KEY (KATOTTG_2023_school) REFERENCES Locations(KATOTTG_2023)
 );
