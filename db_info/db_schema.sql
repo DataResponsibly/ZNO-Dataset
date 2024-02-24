@@ -2,7 +2,7 @@
 CREATE DATABASE EIE;
 
 -- Connect to the database
-\c EIE;
+\c eie;
 
 -- Create table Locations
 CREATE TABLE Locations (
