@@ -206,3 +206,4 @@ notebooks/tables_creation/fin_data/finance_2019_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
 db_info/test_connection copy.ipynb
+notebooks/analyses/paper_data.ipynb
