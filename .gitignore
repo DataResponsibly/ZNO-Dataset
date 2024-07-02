@@ -28,8 +28,6 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -51,25 +49,10 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
+
 *.mo
 *.pot
-
-# Django stuff:
 *.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
 
 # PyBuilder
 target/
@@ -85,13 +68,9 @@ ipython_config.py
 .python-version
 
 # pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+# Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# PEP 582
 __pypackages__/
 
 # Celery stuff
@@ -128,82 +107,24 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-data_loader/2016/OpenData2016.csv
-data_loader/2017/OpenData2017.csv
-data_loader/2018/OpenData2018.csv
-data_loader/2019/Odata2019File.csv
-data_loader/2020/Odata2020File.csv
-data_loader/2021/Odata2021File.csv
-data_loader/2022/Odata2022File.csv
-notebooks/temp_old/students_level/eie_full_translated.csv
-notebooks/.DS_Store
-notebooks/school_level/.DS_Store
-
-
-.DS_Store
-.csv
-notebooks/students_level/eie_full_translated.csv
-notebooks/temp_old/students_level/eie_translated.csv
-notebooks/temp_old/students_level/Odata2022File.csv
-data_loader/2017/OpenData2017.csv
-data_loader/2018/OpenData2018.csv
-data_loader/2019/Odata2019File.csv
-data_loader/2021/Odata2021File.csv
-data_loader/2020/Odata2020File.csv
-data_loader/2022/Odata2022File.csv
-data_loader/2016/OpenData2016.csv
-notebooks/temp_old/students_level/school_dataset.csv
-notebooks/temp_old/students_level/zno_all.csv
-notebooks/temp_old/students_level/zno_preprocessed.csv
-notebooks/temp_old/students_level/eie_preprocessed.csv
-notebooks/temp_old/students_level/eie_all.csv
-notebooks/temp_old/students_level/eie_preprocessed.csv.zip
-notebooks/temp_old/students_level/areas.csv
-notebooks/temp_old/students_level/location.csv
-notebooks/temp_old/students_level/eie_2016_2021_preprocessed.csv
-notebooks/temp_old/students_level/eie_2016-2021_preprocessed.csv
-notebooks/temp_old/students_level/eie_2016-2022_preprocessed.csv
-notebooks/temp_old/students_level/eie_locations.csv
-notebooks/temp_old/tables_creation/data/
-
+# Data files
+data_loader/*/*.csv
+notebooks/tables_creation/*.csv
+notebooks/tables_creation/data/*
 notebooks/tables_creation/temp_data/
-data_loader/2023/Odata2023File.csv
-notebooks/tables_creation/schools_bot.csv
-notebooks/tables_creation/school_data/other datasets/05_vinnytska_ver2019.xls
-notebooks/tables_creation/school_data/other datasets/05_vinnytska_ver2020.xls
-notebooks/tables_creation/school_data/other datasets/07_volinska.xlsx
-notebooks/tables_creation/school_data/other datasets/12_dnipropetrovska.xlsx
-notebooks/tables_creation/school_data/other datasets/18_zhytomyrska_ver_2019.xls
-notebooks/tables_creation/school_data/other datasets/18_zhytomyrska_ver_2020.xls
-notebooks/tables_creation/school_data/other datasets/23_zaporizka_ver2019.xls
-notebooks/tables_creation/school_data/other datasets/23_zaporizka_ver2020.xls
-notebooks/tables_creation/school_data/other datasets/35_kirovohradska_ver2020.xlsx
-notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver.xlsx
-notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver2019.xls
-notebooks/tables_creation/school_data/other datasets/63_kharkivska_ver2020.xls
-notebooks/tables_creation/school_data/other datasets/reestr-perelik1.xls
-notebooks/tables_creation/school_data/other datasets/perelik-subektiv-gospodaryuvannya.xlsx
-notebooks/tables_creation/school_data/other datasets/74_chernigivska_ver.xlsx
-notebooks/tables_creation/school_data/other datasets/48_mikolaivska_ver.xlsx
-notebooks/tables_creation/data/
-zno/2023/Odata2023File.csv
-zno/2021/Odata2021File.csv
-zno/2022/Odata2022File.csv
-zno/2020/Odata2020File.csv
-zno/2019/Odata2019File.csv
-zno/2018/OpenData2018.csv
-zno/2016/OpenData2016.csv
-zno/2017/OpenData2017.csv
-notebooks/tables_creation/school_data/by_hand1.csv
+notebooks/tables_creation/school_data/other datasets/*
+
 notebooks/tables_creation/final_tables/students.csv
 notebooks/tables_creation/final_tables/students_take_tests.csv
-notebooks/tables_creation/finance_2019_for_bot.csv
-notebooks/tables_creation/dataset_2019_issues.csv
-notebooks/analysis/schools_temp.ipynb
-notebooks/analyses/migration_by_gender.ipynb
-notebooks/analyses/PISA2018.png
+
+# TODO: check one more time
+notebooks/tables_creation/school_data/by_hand1.csv
 notebooks/tables_creation/fin_data/finance_2019_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
-db_info/test_connection copy.ipynb
+notebooks/analyses/migration_by_gender.ipynb
 notebooks/analyses/paper_data.ipynb
+notebooks/analyses/PISA2018.png
+
+# macOS
+.DS_Store
