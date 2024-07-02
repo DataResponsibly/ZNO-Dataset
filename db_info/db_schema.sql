@@ -120,9 +120,6 @@ COPY Years FROM '/usr/src/app/final_tables/years.csv' WITH CSV HEADER;
 -- Load data into Schools table
 COPY Schools FROM '/usr/src/app/final_tables/schools_edrpou.csv' WITH CSV HEADER;
 
--- Insert empty records into Schools (assuming EDRPOU is a string column)
--- INSERT INTO Schools (EDRPOU, years) SELECT '', years FROM Years;
-
 -- Load data into Schools_Stats table
 COPY Schools_Stats FROM '/usr/src/app/final_tables/school_stats.csv' WITH CSV HEADER;
 
