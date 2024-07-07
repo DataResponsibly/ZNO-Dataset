@@ -122,9 +122,6 @@ notebooks/tables_creation/school_data/by_hand1.csv
 notebooks/tables_creation/fin_data/finance_2019_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
 notebooks/tables_creation/fin_data/finance_2020_clean.csv
-notebooks/analyses/migration_by_gender.ipynb
-notebooks/analyses/paper_data.ipynb
-notebooks/analyses/PISA2018.png
 
 # macOS
 .DS_Store
