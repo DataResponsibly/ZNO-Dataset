@@ -88,6 +88,50 @@ The dataset does not have a prediction task and, therefore, has no label. Howeve
 
 Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published.
 
+|                             |                       |          |          |          |          |          |          |          |          |
+| :-------------------------: | :-------------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+|      **Features/Years**     |     **Table name**    | **2016** | **2017** | **2018** | **2019** | **2020** | **2021** | **2022** | **2023** |
+|        KATOTTG\_2023        |        Schools        |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|            EDRPOU           |        Schools        |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|          eotypename         |        Schools        |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|             year            |        Schools        |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|            EDRPOU           |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|            eotype           |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|           eolevel           |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|          teachstuff         |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|        nonteachstuff        |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|       teachstuffretage      |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|            pupils           |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|           classes           |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|             opex            |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|           opexplan          |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|             hub             |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|             year            |     Schools\_Stats    |     -    |     -    |     -    |     +    |     +    |     -    |     -    |     -    |
+|            outid            |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|            birth            |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|         sextypename         |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|       classprofilename      |        Students       |     -    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|         regtypename         |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|        classlangname        |        Students       |     -    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|        KATOTTG\_2023        |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|        EDRPOU\_school       |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|             year            |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|            status           |        Students       |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|            outid            | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|             year            | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|           score100          | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|           score12           | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|            score            | Students\_Take\_Tests |     -    |     -    |     +    |     +    |     +    |     +    |     +    |     +    |
+|         test\_status        | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|        test\_subject        | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|          test\_type         | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+| KATOTTG\_2023\_test\_center | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     +    |     +    |
+|     EDRPOU\_test\_center    | Students\_Take\_Tests |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|        KATOTTG\_2023        |      Test Centers     |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|             year            |      Test Centers     |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+|            EDRPOU           |      Test Centers     |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
+
+
 **\- Are relationships between individual instances made explicit (e.g., users' movie ratings, social network links)? If so, please describe how these relationships are made explicit.**
 
 Yes, they are explicit. To analyze relationships in the datasets, check the ER Diagram:
