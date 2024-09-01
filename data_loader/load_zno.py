@@ -99,7 +99,7 @@ def initialize_and_download(datadir: str, year: int, download: bool=False) -> st
     if not download:
         raise FileNotFoundError(f'Could not find {year} ZNO data for in {datadir}. Call get_data with download=True to download the dataset.')
 
-    logger.info(f'Downloading data for {year} data...')
+    logging.info(f'Downloading data for {year} data...')
     exam_name = test_type(year)
     
     # Download and extract file
