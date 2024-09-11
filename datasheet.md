@@ -82,7 +82,7 @@ Composition
 
 - **Is any information missing from individual instances?** <!--- If so, please provide a description explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information but might include, e.g., redacted text. -->
 
-    Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published.
+    Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published. The chart below shows for which years and dataset a ceratin feture is available:
 
     |                             |                       |          |          |          |          |          |          |          |          |
     | :-------------------------: | :-------------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
@@ -128,60 +128,65 @@ Composition
     |            EDRPOU           |      Test Centers     |     +    |     +    |     +    |     +    |     +    |     +    |     -    |     -    |
 
 
-- **Are relationships between individual instances made explicit (e.g., users' movie ratings, social network links)?** If so, please describe how these relationships are made explicit.
+- **Are relationships between individual instances made explicit (e.g., users' movie ratings, social network links)?** <!-- If so, please describe how these relationships are made explicit. -->
 
-    Yes, they are explicit. To analyze relationships in the datasets, check the ER Diagram:
+    Yes, they are explicit. To understand the relationships between instances, see the following ER Diagram:
 
     ![](img/ER_diagram.png)
 
-
+<!---
 - **Are there recommended data splits (e.g., training, development/validation, testing)?** If so, please provide a description of these splits, explaining the rationale behind them.
 
     _We should come back when we decided which task we can do with this dataset_
+--->
 
-- **Are there any errors, sources of noise, or redundancies in the dataset?** If so, please provide a description.
+- **Are there any errors, sources of noise, or redundancies in the dataset?** <!--- If so, please provide a description. -->
 
-    The publicly available data from the Ukrainian Center for Educational Quality Assessment contains errors, so we cleaned and standardized it. The leading challenge with working with this open data over the years was a lack of standard data entry practices (sometimes even within the same year), the lack of a unified format of the data released year to year, and errors from manual data entry. Supplementary materials in the **associated paper** describe the whole cleaning process.
+    The publicly available data from the Ukrainian Center for Educational Quality Assessment contains errors, which meant we had to clean and standardize it. The primary challenge in working with this data is the lack of consistent data entry practices across years (and sometimes even within the same year), the lack of a unified format of the data year to year, and errors from manual data entry. Supplementary materials in the associated paper describe the whole cleaning process. Some examples of issues include different test taking requirements for students from year to year, typos when entering school names, and changes in the administrative divisions of Ukraine.
 
-- **Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)?** If it links to or relies on external resources, a) are there guarantees that they will exist and remain constant over time; b) are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created); c) are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate.
+- **Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)?** <!--- If it links to or relies on external resources, a) are there guarantees that they will exist and remain constant over time; b) are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created); c) are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a future user? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points, as appropriate. -->
 
-    It was created based on an external resource – the [open data portal](https://zno.testportal.com.ua/opendata) of the Ukrainian Center for Educational Quality Assessment. We provide Jupyter notebooks and scripts to generate the datasets from the respective sources.
+    The raw data was obtained through an external reference: he [open data portal](https://zno.testportal.com.ua/opendata) of the Ukrainian Center for Educational Quality Assessment. In this repositroy, we provide Jupyter notebooks and scripts to generate the processed and cleaned datasets from the original source.
 
-    1. This is guaranteed by the [law](https://ips.ligazakon.net/document/view/t112939?an=251&ed=2022_12_01) of Ukraine on access to public information. Information administrators are obliged to provide public information in the form of open data upon request, publish, and regularly update it on the unified state open data web portal and on their websites. These datasets are published via an open data portal.
-    2. You can find the official archival versions of the datasets on the [open data portal](https://zno.testportal.com.ua/opendata). These datasets are depersonalized (so hidden some sensitive features) according to the Law of Ukraine "On Personal Data Protection."
+    1. Access to this dataset is guaranteed by the [Ukranian law](https://ips.ligazakon.net/document/view/t112939?an=251&ed=2022_12_01) on the access to public information. Information administrators are obliged to provide public information in the form of open data upon request, publish, and regularly update it on the unified state open data web portal and on their websites. These datasets are published via an open data portal.
+    2. You can find the official archival versions of the datasets on the [open data portal](https://zno.testportal.com.ua/opendata). These datasets are depersonalized (sensitive features are hidden) according to the Law of Ukraine "On Personal Data Protection."
     3. There are no restrictions for data usage, and the law of Ukraine guarantees it: “Public information in the form of open data is authorized for its further free use and distribution. Any person may freely copy, publish, distribute, use, including for commercial purposes, in combination with other information or by incorporating into their own product public information in the form of open data with a mandatory reference to the source of such information.”
 
     [Article 101](https://ips.ligazakon.net/document/view/t112939?an=251&ed=2022_12_01). Public information in the form of open data 
 
-    The datasets about participants and their EIE or NMT results were published around August to September of the same year, starting in 2016. Annual education expenditure datasets are published around January-February of the following year, starting in 2018, but in 2022 publication was stopped due to the war in Ukraine.
+    The datasets about participants and their EIE or NMT results are published from August to September of the same year, starting in 2016. Annual education expenditure datasets are published around January-February of the following year, starting in 2018, but in 2022 publication was stopped due to the war in Ukraine.
 
-- **Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications)?** If so, please provide a description.
+- **Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications)?**
 
-    Personal data in these datasets is depersonalized and protected in accordance with the Law of Ukraine ["On Personal Data Protection"](https://ips.ligazakon.net/document/view/t102297?an=0&ed=2022_10_27).
+<!--- If so, please provide a description. -->
 
-- **Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety?** If so, please describe why.
+    Personally Identifiable Information (PII) in these datasets is depersonalized and protected in accordance with the Law of Ukraine ["On Personal Data Protection"](https://ips.ligazakon.net/document/view/t102297?an=0&ed=2022_10_27).
+
+- **Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety?** <!--- If so, please describe why. -->
 
     No.
 
-- **Does the dataset relate to people?** If not, you may skip the remaining questions in this section.
+- **Does the dataset relate to people?** <!--- If not, you may skip the remaining questions in this section. -->
 
-    Yes, each instance in the Student and Students_take_tests datasets corresponds to a person.
+    Yes, each instance in the **Student** and **Students_take_tests** datasets corresponds to a person.
 
-- **Does the dataset identify any subpopulations (e.g., by age, gender)?** If so, please describe how these subpopulations are identified and provide a description of their respective distributions within the dataset.
+- **Does the dataset identify any subpopulations (e.g., by age, gender)?** <!--- If so, please describe how these subpopulations are identified and provide a description of their respective distributions within the dataset. -->
 
-    Datasets identify subpopulations since each individual has features such as year of birth, gender, living location, type of school, etc.
+    The dataset contains identifying information for subpopulations, since each individual has features like year of birth, gender, living location (urban or rural), and type of school.
 
-- **Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset?** If so, please describe how.
+- **Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset?** <!--- If so, please describe how. -->
 
-    To the best of our knowledge and according to the law of Ukraine, "On Personal Data Protection," it is impossible to identify individuals directly from the datasets. However, the possibility of reconstruction attacks combining data from the UCEQA and other data sources is a concern. Differential privacy
+    To the best of our knowledge and according to the law of Ukraine, "On Personal Data Protection," it is impossible to identify individuals directly from the datasets. However, the possibility of reconstruction attacks combining data from the UCEQA and other data sources is a concern.
 
-- **Does the dataset contain data that might be considered sensitive in any way (e.g., data that reveals racial or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)?** If so, please provide a description.
+- **Does the dataset contain data that might be considered sensitive in any way (e.g., data that reveals racial or ethnic origins, sexual orientations, religious beliefs, political opinions or union memberships, or locations; financial or health data; biometric or genetic data; forms of government identification, such as social security numbers; criminal history)?** <!--- If so, please provide a description. -->
 
     The datasets contain features such as a year of birth or gender that are often considered sensitive.
-
+<!---
 - **Any other comments?**
 
     No.
+
+--->
 
 Collection process
 ------------------
