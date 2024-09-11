@@ -7,11 +7,11 @@ the underlying EIE data sources.
 Motivation
 ----------
 
-- **For what purpose was the dataset created?** Was there a specific task in mind? Was there a specific gap that needed to be filled? Please   provide a description.
+- **For what purpose was the dataset created?** Was there a specific task in mind? Was there a specific gap that needed to be filled?
 
     Creating this dataset involved:  
-    - collecting of raw data about student’s performance during the standardized tests EIE (External Independent Evaluation) and NMT (National Multi-subject Test) by the Ukrainian Center for Educational Quality Assessment (UCEQA), a [budgetary institution](https://www.kmu.gov.ua/npas/27071964/) in the Ministry of Education and Science's management sphere  and about governmental expenditures on education by the Ministry of Finance;
-    - cleaning, matching, and processing this raw data by our research team.
+    - Collecting raw data about student’s performance during the standardized tests EIE (External Independent Evaluation) and NMT (National Multi-subject Test) by the Ukrainian Center for Educational Quality Assessment (UCEQA), a [budgetary institution](https://www.kmu.gov.ua/npas/27071964/) in the Ministry of Education and Science's management sphere  and about governmental expenditures on education by the Ministry of Finance;
+    - Cleaning, matching, and processing this raw data by our research team.
 
     UCEQA releases the corresponding raw data each year for two reasons:
 
@@ -22,20 +22,20 @@ Motivation
 
     The Ministry of Finance released the corresponding [raw data](https://mof.gov.ua/uk/the-reform-of-education) for school statistics to provide public information about expenditures on education by Public Information Law.
 
-    **Our motivation** was to extend the dataset ecosystem available for research in two directions: the education domain and the dataset from Eastern Europe (Ukraine).
+    <!--- **Our motivation** was to extend the dataset ecosystem available for research in two directions: the education domain and the dataset from Eastern Europe (Ukraine). -->
 
 - **Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)?**
 
     The processed dataset was created from available raw data on UCEQA and the Ministry of Finance portals by Dr. Julia Stoyanovich, Andrew Bell, and Falaah Arif Khan from the Center for Responsible AI, New York University, and Dr. Tetiana Zakharchenko, Nazarii Drushchak, Oleksandra Konopatska, and Olha Liuba from Ukrainian Catholic University.
 
-- **Who funded the creation of the dataset?** If there is an associated grant, please provide the name of the grantor and the grant name and number.
+- **Who funded the creation of the dataset?** <!---If there is an associated grant, please provide the name of the grantor and the grant name and number.-->
 
     The collection of raw data was funded by the Ukrainian government. The cleaning, matching, and pre-processing of the raw data collected were funded by the Center for Responsible AI, New York University.
-
+<!--
 -  **Any other comments?**
 
     No.
-
+-->
 Composition
 -----------
 
