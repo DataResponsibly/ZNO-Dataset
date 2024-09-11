@@ -39,7 +39,7 @@ Motivation
 Composition
 -----------
 
-- **What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)?** Are there multiple types of instances (e.g., movies, users, and ratings; people and interactions between them; nodes and edges)? Please provide a description.
+- **What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)?** Are there multiple types of instances (e.g., movies, users, and ratings; people and interactions between them; nodes and edges)? <!--Please provide a description. -->
 
     The datasets represent the information about the participants’ EIE (External Independent Evaluation) from 2016 to 2021 and the NMT (National Multi-subject Test) from 2022 to 2023. The test participants are those who want to use the test results to get the Certificate of Complete General Secondary Education or for admission to higher education institutions to study for a bachelor’s degree.
 
@@ -68,19 +68,19 @@ Composition
     | Tests | 2   | 25  |
     | Year | 1   | 8   |
 
-- **Does the dataset contain all possible instances, or is it a sample (not necessarily random) of instances from a larger set?** If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances because instances were withheld or unavailable)
+- **Does the dataset contain all possible instances, or is it a sample (not necessarily random) of instances from a larger set?** <!--- If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set (e.g., geographic coverage)? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances because instances were withheld or unavailable) -->
 
     The dataset contains all possible instances of students who have registered for participation in EIE or NMT in the corresponding year. Some of the collected features (name, date of birth, etc.) are hidden according to Ukraine’s law, “On Personal Data Protection."
 
-- **What data does each instance consist of?** "Raw" data (e.g., unprocessed text or images) or features? In either case, please provide a description.
+- **What data does each instance consist of?** <!--- "Raw" data (e.g., unprocessed text or images) or features? In either case, please provide a description. -->
 
     Each instance consists of features. Appendix B of the associated paper describes each feature in the dataset.
 
-- **Is there a label or target associated with each instance?** If so, please provide a description.
+- **Is there a label or target associated with each instance?** <!--- If so, please provide a description. -->
 
     The dataset does not have a prediction task and, therefore, has no label. However, we chose to create an associated prediction task and use the exam results as labels. There are different types of results: test status (whether an individual passed the exam), grade on the raw scale (depends on the subject and year), grade in rating score 100-200 (used for university admission), and grade іn a 12-point scale (to be used for final assessments at school).
 
-- **Is any information missing from individual instances?** If so, please provide a description explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information but might include, e.g., redacted text.
+- **Is any information missing from individual instances?** <!--- If so, please provide a description explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information but might include, e.g., redacted text. -->
 
     Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published.
 
