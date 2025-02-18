@@ -26,7 +26,7 @@ Motivation
 
 - **Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)?**
 
-    The processed dataset was created from available raw data on UCEQA and the Ministry of Finance portals by Dr. Julia Stoyanovich, Andrew Bell, and Falaah Arif Khan from the Center for Responsible AI, New York University, and Dr. Tetiana Zakharchenko, Nazarii Drushchak, Oleksandra Konopatska, and Olha Liuba from Ukrainian Catholic University.
+    The processed dataset was created from available raw data on UCEQA and the Ministry of Finance portals by Dr. Julia Stoyanovich, Andrew Bell, and Falaah Arif Khan from the Center for Responsible AI, New York University, and Dr. Tetiana Zakharchenko, Nazarii Drushchak, and Oleksandra Konopatska from Ukrainian Catholic University.
 
 - **Who funded the creation of the dataset?** <!---If there is an associated grant, please provide the name of the grantor and the grant name and number.-->
 
@@ -156,9 +156,7 @@ Composition
 
     The datasets about participants and their EIE or NMT results are published from August to September of the same year, starting in 2016. Annual education expenditure datasets are published around January-February of the following year, starting in 2018, but in 2022 publication was stopped due to the war in Ukraine.
 
-- **Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications)?**
-
-<!--- If so, please provide a description. -->
+- **Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals' non-public communications)?** <!--- If so, please provide a description. -->
 
     Personally Identifiable Information (PII) in these datasets is depersonalized and protected in accordance with the Law of Ukraine ["On Personal Data Protection"](https://ips.ligazakon.net/document/view/t102297?an=0&ed=2022_10_27).
 
