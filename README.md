@@ -38,7 +38,7 @@ ZNO-Dataset is a repository containing scripts, notebooks, and documentation for
    
    - **Option 1 (Recommended): Load Pre-Cleaned Data**
      
-     Download the pre-cleaned data from [link_placeholder](link_placeholder)
+     Download the pre-cleaned data from [https://drive.google.com/file/d/1J1qyGq3RvBrgVKFOSU4j-IGJskMxvxpo/view?usp=sharing](link_placeholder)
      
    - **Option 2: Load and Process Data Manually**
      
