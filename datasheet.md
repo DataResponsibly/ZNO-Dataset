@@ -74,7 +74,7 @@ Composition
 
 - **What data does each instance consist of?** <!--- "Raw" data (e.g., unprocessed text or images) or features? In either case, please provide a description. -->
 
-    Each instance consists of features. Appendix B of the associated paper describes each feature in the dataset.
+    Each instance consists of features. Jupiter notebook Tables_Description describes each feature in the dataset.
 
 - **Is there a label or target associated with each instance?** <!--- If so, please provide a description. -->
 
@@ -82,7 +82,7 @@ Composition
 
 - **Is any information missing from individual instances?** <!--- If so, please provide a description explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information but might include, e.g., redacted text. -->
 
-    Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published. The chart below shows for which years and dataset a ceratin feture is available:
+    Some features (e.g., language of the class or raw score in Students) contain missing values. This is due to the fact that in some years, some information was not collected or published. The chart below shows for which years and datasets a certain feature is available:
 
     |                             |                       |          |          |          |          |          |          |          |          |
     | :-------------------------: | :-------------------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
@@ -132,7 +132,7 @@ Composition
 
     Yes, they are explicit. To understand the relationships between instances, see the following ER Diagram:
 
-    ![](img/ER_diagram.png)
+    ![](img/er_diagram.png)
 
 <!---
 - **Are there recommended data splits (e.g., training, development/validation, testing)?** If so, please provide a description of these splits, explaining the rationale behind them.
