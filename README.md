@@ -32,7 +32,25 @@ ZNO-Dataset is a repository containing scripts, notebooks, and documentation for
    cd ZNO-Dataset
    ```
 
-2. **Setup the Database using Docker:**
+2. **Obtain the Data:**
+
+   You have two options:
+   
+   - **Option 1 (Recommended): Load Pre-Cleaned Data**
+     
+     Download the pre-cleaned data from [link_placeholder](link_placeholder)
+     
+   - **Option 2: Load and Process Data Manually**
+     
+     Run the data loader script to process raw data:
+     
+     ```sh
+     python data_loader/load_zno.py
+     ```
+     
+     Then, run all notebooks in the `notebooks/tables_creation` folder.
+
+3. **Setup the Database using Docker:**
 
    Follow the instructions in [`db_info/README.md`](db_info/README.md) or run:
 
@@ -42,17 +60,9 @@ ZNO-Dataset is a repository containing scripts, notebooks, and documentation for
    psql --host=127.0.0.1 --port=5432 --username=myuser --dbname=EIE
    ```
 
-3. **Load and Process Data:**
-
-   Run the data loader script:
-
-   ```sh
-   python data_loader/load_zno.py
-   ```
-
 4. **Explore the Notebooks:**
 
-   Open the Jupyter notebooks in the `notebooks` directory for data analysis and table creation.
+   Open the Jupyter notebooks in the `notebooks` directory for data analysis.
 
 ## Data Documentation
 
