@@ -353,11 +353,11 @@ Maintenance
 
 - **Who is supporting/hosting/maintaining the dataset?**
 
-    The dataset will be hosted on GitHub and supported and maintained by Nazarii Drushchak, Tetiana Zakharchenko, Olha Liuba, Oleksandra Konopatska, Andrew Bell, and Julia Stoyanovich.
+    The dataset will be hosted on GitHub and supported and maintained by Nazarii Drushchak, Tetiana Zakharchenko, Oleksandra Konopatska, Andrew Bell, and Julia Stoyanovich.
 
 - **How can the owner/curator/manager of the dataset be contacted (e.g., email address)?**
 
-    Please send issues and requests to [ZNO_DATASET@gmail.com](ZNO_DATASET@gmail.com).
+    Please send issues and requests to [t.herasymova@ucu.edu.ua](t.herasymova@ucu.edu.ua).
 
 <!---
 - **Is there an erratum?** If so, please provide a link or other access point.
