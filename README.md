@@ -38,7 +38,15 @@ ZNO-Dataset is a repository containing scripts, notebooks, and documentation for
    
    - **Option 1 (Recommended): Load Pre-Cleaned Data**
      
-     Download the pre-cleaned data from [Google Drive](https://drive.google.com/file/d/1J1qyGq3RvBrgVKFOSU4j-IGJskMxvxpo/view?usp=sharing)
+     Download the pre-cleaned data from [HuggingFace Hub](https://huggingface.co/collections/DSRL/eie-dataset-67b78c8fe5dcadcedb8a42f5)
+     
+     Load example:
+      
+      ```python
+      from datasets import load_dataset
+      dataset = load_dataset('DSRL/student')
+      dataset['train'].to_pandas().head()
+      ```
      
    - **Option 2: Load and Process Data Manually**
      
