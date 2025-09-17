@@ -125,3 +125,4 @@ notebooks/tables_creation/fin_data/finance_2020_clean.csv
 
 # macOS
 .DS_Store
+**/OpenDataInfo*.xls*
