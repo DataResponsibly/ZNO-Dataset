@@ -72,13 +72,16 @@ def download_and_extract(
     with open(download_path, 'wb') as handle:
         handle.write(response.content)
 
-    # Extract all files to datadir
+    # Extract all files to a temporary directory
+    temp_extract_dir = os.path.join(datadir, '_temp_extract')
+    os.makedirs(temp_extract_dir, exist_ok=True)
+    
     with py7zr.SevenZipFile(download_path, 'r') as archive:
-        archive.extractall(path=datadir)
+        archive.extractall(path=temp_extract_dir)
 
     # Locate the CSV file that was extracted
     extracted_csv_path = None
-    for root, _dirs, files in os.walk(datadir):
+    for root, _dirs, files in os.walk(temp_extract_dir):
         for fname in files:
             if fname.lower().endswith('.csv'):
                 candidate = os.path.join(root, fname)
@@ -94,26 +97,26 @@ def download_and_extract(
 
     if extracted_csv_path is None:
         raise FileNotFoundError(
-            f'No CSV found after extracting {remote_fname} into {datadir}'
+            f'No CSV found after extracting {remote_fname} into {temp_extract_dir}'
         )
 
-    # Move/rename the CSV to the expected location in datadir
+    # Move the CSV to the expected location in datadir (not in subdirectory)
     final_path = os.path.join(datadir, file_name)
-    if extracted_csv_path != final_path:
-        os.makedirs(datadir, exist_ok=True)
-        os.replace(extracted_csv_path, final_path)
+    os.replace(extracted_csv_path, final_path)
 
-        # Clean up now-empty directories created by extraction
+    # Clean up temporary extraction directory
+    import shutil
+    try:
+        shutil.rmtree(temp_extract_dir)
+    except Exception as e:
+        logger.warning(f'Could not remove temporary directory {temp_extract_dir}: {e}')
+
+    # Delete the downloaded archive if required
+    if delete_download:
         try:
-            parent_dir = os.path.dirname(extracted_csv_path)
-            if parent_dir != datadir and not os.listdir(parent_dir):
-                os.rmdir(parent_dir)
-        except Exception:
-            pass
-
-    # Delete the downloaded file if required and it is not the same as the file in datadir
-    if delete_download and download_path != os.path.join(datadir, file_name):
-        os.remove(download_path)
+            os.remove(download_path)
+        except Exception as e:
+            logger.warning(f'Could not remove downloaded file {download_path}: {e}')
 
 
 def initialize_and_download(datadir: str, year: int, download: bool = False) -> str:
