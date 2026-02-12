@@ -1,19 +1,21 @@
 import pandas as pd
 import string
 
-def merging(df1: pd.DataFrame, df2: pd.DataFrame, lst_on: list)->pd.DataFrame:
+def merging_edrpou(
+    df1: pd.DataFrame,
+    df2: pd.DataFrame,
+    lst_on: list
+    ) -> pd.DataFrame:
     '''Merging two pandas Dataframe df1 and df2 based on the list of
     parameters.'''
-    try:
-        output = df1.merge(df2, on=lst_on, how='left')
-        output.loc[output['EDRPOU_y'].isna(), 'EDRPOU_y'] = ''
-        output.loc[output['EDRPOU_x'] == '', 'EDRPOU_x'] = output.loc[output['EDRPOU_x'] == '', 'EDRPOU_y']
-        output = output.drop(columns=['EDRPOU_y'], axis=1)
-        output = output.rename(columns = {'EDRPOU_x':'EDRPOU'})
-        print('Percentage matched:',round(output[output['EDRPOU'] != ''].shape[0]/output.shape[0]*100,1), '%')
-        return output
-    except:
-        return None
+    output = df1.merge(df2, on=lst_on, how='left')
+    output.loc[output['eoedrpou_x'].isna(), 'eoedrpou_x'] = output.loc[output['eoedrpou_x'].isna(), 'eoedrpou_y']
+    output = output.drop(columns=['eoedrpou_y'], axis=1)
+    output = output.rename(columns={'eoedrpou_x': 'eoedrpou'})
+    total = output.shape[0]
+    filled = output['eoedrpou'].notna().sum()
+    print(f"Filled: {filled} out of {total}  or {round(filled/total*100)}%")
+    return output
 
 def latin_to_cyrillic(dataset: pd.DataFrame,  attr: str)-> pd.DataFrame:
     '''replace all latin letters that are similar to cyrillic
