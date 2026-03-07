@@ -113,18 +113,18 @@ def delete_punctuation(dataset: pd.DataFrame,  attr: str)-> pd.DataFrame:
 def del_rayon(name:str)->str:
     '''delete name of rayon
     >>> del_rayon('КОНЗ " Новоселівський ЗЗСО I-III \
-ступенів Куяльницької с/р Подільського району Одеської об"ласті')
+ступенів Куяльницької с/р Подільського району Одеської області')
     'КОНЗ " Новоселівський ЗЗСО I-III \
-ступенів Куяльницької с/р Одеської об"ласті'
+ступенів Куяльницької с/р'
     '''
     t = name.split()
     t_lower = name.lower().split()
-    for s in ['району', 'район']:
+    for s in ['району', 'район', 'області', 'область']:
         if s in t_lower:
             i = t_lower.index(s)
+            del t_lower[i-1:i+1]
             del t[i-1:i+1]
-            return ' '.join(t)
-    return name
+    return ' '.join(t)
 
 def delete_status(dataset: pd.DataFrame,  attr: str)-> pd.DataFrame:
     '''replace abbreviations by their full name
@@ -158,9 +158,22 @@ def delete_status(dataset: pd.DataFrame,  attr: str)-> pd.DataFrame:
 def create_id(dataset: pd.DataFrame, attr: str, id_: str)-> pd.DataFrame:
     '''create id for schools
     >>> dataset = pd.DataFrame({'id':['КОНЗ " Новоселівський ЗЗСО I-III \
-ступенів ім.М.В.Марченка Куяльницької с/р Подільського району Одеської об"ласті']})
+ступенів ім.М.В.Марченка Куяльницької с/р Подільського району Одеської області']})
     >>> list(create_id(dataset,'id', 'id_').id_.unique())
-    ['новоселвський2ступменмвмарченкакуяльницькаодеськаобл']
+    ['новоселвський3ступменмвмарченкакуяльницька']
+
+    >>> dataset = pd.DataFrame({'id':['Комунальний заклад "Тернівська \
+загальноосвітня школа І-ІІІ ступенів №6" Тернівської міської ради \
+Дніпропетровської області']})
+    >>> list(create_id(dataset,'id', 'id_').id_.unique())
+    ['тернвськазагальноосвтняшкола3ступ6тернвська']
+
+    >>> dataset = pd.DataFrame({'id':['Комунальний заклад "Миколаївська \
+загальноосвітня школа №1 І-ІІІ ступенів" Дніпровської районної ради \
+Дніпропетровської області"']})
+    >>> list(create_id(dataset,'id', 'id_').id_.unique())
+    ['миколавськазагальноосвтняшкола13ступднпровська']
+
     '''
     dataset.loc[:,id_] = dataset[attr]
     #delete everything inside brackets
@@ -176,7 +189,7 @@ def create_id(dataset: pd.DataFrame, attr: str, id_: str)-> pd.DataFrame:
 
     for old, new in to_change.items():
         dataset.loc[:,id_] = dataset[id_].str.replace(old, new)
-    
+
     dataset[id_] = dataset[id_].apply(del_rayon)
 
     #delete spaces
@@ -188,33 +201,32 @@ def create_id(dataset: pd.DataFrame, attr: str, id_: str)-> pd.DataFrame:
     dataset.loc[:,id_] = dataset[id_].str.replace('||||', '3')
     dataset.loc[:,id_] = dataset[id_].str.replace('ІІІ', '2')
     dataset.loc[:,id_] = dataset[id_].str.replace('|||', '2')
-    
     dataset.loc[:,id_] = dataset[id_].str.lower()
 
     dataset[id_] = dataset[id_].apply(lambda s: s if (len(s) and s[-1].isdigit()) else s[:-1])
 
     dct = {'ої':'а',
-           'села':'с', 'село':'с', 'селещна':'селищна', 'селищна':'', 'селищн':'',
-           'сільська':'', 'сільськ':'', 'сільска':'', 'сільск':'',
-           'района':'', 'район':'',
-           'міська':'', 'міськ':'', 
+           'села':'с', 'село':'с', 'селещна':'селищна', 'селищна':'', 'селищно':'', 'селищн':'',
+           'сільська':'', 'сільсько':'', 'сільска':'', 'сільско':'', 'сільськ':'', 'сільск':'', 
+           'района':'', 'районо':'', 'район':'',
+           'міська':'', 'місько':'', 'міськ':'', 
            "ступеня":"ступ", "ступенів":"ступ", 
            "ступеню":"ступ",
-           "області":"обл", "область":"обл", "област":"обл", 
            "місто":"м", "міста":"м",
            'і':'', 'ї':'',
            'ґ':'г', 'є':'',
            'загальносвтня':'загальноосвтня'}
 
+
     for old_symb, new_symb in dct.items():
         dataset.loc[:,id_] = dataset[id_].str.replace(old_symb, new_symb)
-    
+
     dataset = delete_status(dataset, id_)
     return dataset
 
 
 if __name__=='__main__':
-    # import doctest
-    # print(doctest.testmod())
+    import doctest
+    print(doctest.testmod())
     dataset = pd.DataFrame({'id':['Школа І-ІІІ ступенів № 1 Шевченківського району м. Київ']})
     print(list(create_id(dataset,'id', 'id_').id_.unique()))
